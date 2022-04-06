@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.container{
+    background-color: #23424A;
+    color: white;
+    width: 80%; /*solution, if I want to give it a responsive width that is not the default, use %*/
+    margin: 0 auto;
+    /* height: 300px; causes overflow like we said before when we shrink the screen enough */
+    /*possible solution: */
+    padding: 5em; /*80px (16*5=80px) responsive unit*/
+
+
+}
+
+/*
+* avoid setting height to things (only for really specific cases we'll see)
+* conclusion: remember the default that the page is responsive and we did something to prevent that, so look for the reasons that you did that.
+*/

@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.container{
+    background-color: #23424A;
+    color: white;
+    width: 80%; 
+    max-width: 750px; /*solution*/
+    margin: 0 auto;
+    padding: 5em; 
+}
+
+
+/*
+* there is an issue that if we use big screens, the container's background grows with the screen
+* the problem is that we need to limit the total width of containers and lines because we don't want to move our heads along the screen in order to read somethong. 
+* solution is in the code, hint: max-width :😇 
+* when we set the max-width the container won't grow anymore from when getting to 750px.
+* there is also min-width but we it is less common need for us to use that.
+*/

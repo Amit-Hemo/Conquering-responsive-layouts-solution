@@ -1,0 +1,88 @@
+/*
+taken from challenge 03, we add flexbox to it resposively.
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.intro {
+  background-color: #23424a;
+  padding: 80px 0;
+}
+
+.container {
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.row{
+  display: flex; /*this makes .row to a flex container*/
+  /* flex-direction: row; the default, sometimes we will want it in columns from reasons we'll see in the future */
+  gap: 1em; /*just to see each col individualy */
+}
+
+.col {
+  /*col is a direct child of .row which is the flex container -> col is called a flex item */
+  width: 100%;
+  background-color: chartreuse; /*just to see each col individualy */
+}
+
+.intro__content {
+  width: 60%;
+}
+
+#intro__title {
+  color: white;
+  font-weight: 900;
+  font-size: 3rem;
+}
+
+#intro__p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.3125rem;
+  font-weight: 400;
+  margin-bottom: 3em;
+}
+
+.intro__btn {
+  background-color: #38cfd9;
+  padding: 0.75em 2em;
+  border-radius: 100px;
+  max-width: 285px;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 200ms ease-in-out, transform 100ms ease-in-out;
+  font-size: 1.3125rem;
+}
+
+.intro__btn a {
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #072a2d;
+  text-decoration: none;
+}
+
+.intro__btn:hover,
+.intro__btn:focus {
+  opacity: 0.75;
+  transform: translateY(-3px);
+}
+
+/*Comments:
+* flex items by default want to be as small as they possibly can be in order to fit in one row together.
+
+* if we want from every flex item to squeeze equally in the same size in the row, give them width 100%.
+  if the content is to big for them so there might be an overflow.
+
+* we didn't do much and it is responsive for everything accept for small sizes because the cols will try to shrink together and we will take of that in the future.
+*/

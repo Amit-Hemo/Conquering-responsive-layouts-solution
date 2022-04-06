@@ -1,0 +1,86 @@
+/*
+Challenge 03:
+make a responsive website from a figma file we got from the course.
+use all we learned first week. 
+note: the content has to be 60% of it's container 
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.intro {
+  background-color: #23424a;
+  padding: 80px 0;
+}
+
+.container {
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.intro__content {
+  width: 60%;
+}
+
+#intro__title {
+  color: white;
+  font-weight: 900;
+  font-size: 3rem;
+}
+
+#intro__p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.3125rem;
+  font-weight: 400;
+  margin-bottom: 3em;
+}
+
+.intro__btn {
+  background-color: #38cfd9;
+  padding: 0.75em 2em;
+  border-radius: 100px;
+  max-width: 285px;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 200ms ease-in-out, transform 100ms ease-in-out;
+  font-size: 1.3125rem;
+}
+
+.intro__btn a {
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #072a2d;
+  text-decoration: none;
+}
+
+.intro__btn:hover,
+.intro__btn:focus {
+  opacity: 0.75;
+  transform: translateY(-3px);
+}
+
+/*Comments:
+* here and in the last challenge we add a container/wrapper so the content can be centered by doing margin 0 auto, without putting padding on the sides to the class on intro.
+if we put the padding on the sides it would look weird in smaller screen sizes and not centered in large screen.
+
+* if we want that the content would be 60% of it's container, instead of saying: p,h1,a,etc...{width: 60%}, put all the content in another container and do it there.
+
+* about BEM: 
+ A CSS naming convention we use here, example:
+ we got intro__content class, we can tell from it's name that it is the div with the content inside the intro div.
+ we will see more of the BEM in other projects from now on.
+
+* about the spacing between the p and btn:
+we could use margin-top from the button but we need to think of the bigger picture which is that we may add more p and we also need this spacing. so we prefer to put margin-bottom from the p.
+also, we used 3em so the spacing will be according to the font-size of this p.
+*/

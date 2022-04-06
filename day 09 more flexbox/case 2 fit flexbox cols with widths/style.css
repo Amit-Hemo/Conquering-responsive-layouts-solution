@@ -1,0 +1,115 @@
+/*
+taken from challenge 04, we now will try to give different widths to the flex items so they will fit together inside the intro container.
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.intro {
+  background-color: #23424a;
+  padding: 80px 0;
+}
+
+.container {
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
+  border: 4px solid yellow; /*just to see things well in this case*/
+}
+
+.row {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.mid,
+.low {
+  padding: 3em 0;
+  text-align: center;
+  font-size: 1.3125rem;
+  font-weight: 400;
+}
+
+.mid h2 {
+  color: #87629a;
+}
+
+.low {
+  background-color: #136c72;
+  color: white;
+}
+
+.col {
+  width: 100%;
+}
+
+.intro__image {
+  border: 4px solid pink;
+  align-self: flex-start; 
+  width: 32%;
+}
+
+.intro__content {
+  width: 62%;
+}
+
+#intro__title {
+  color: white;
+  font-weight: 900;
+  font-size: 3rem;
+  margin-top: 0; 
+}
+
+#intro__p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.3125rem;
+  font-weight: 400;
+  margin-bottom: 3em;
+}
+
+.intro__btn {
+  background-color: #38cfd9;
+  padding: 0.75em 2em;
+  border-radius: 100px;
+  max-width: 285px;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 200ms ease-in-out, transform 100ms ease-in-out;
+  font-size: 1.3125rem;
+}
+
+.intro__btn a {
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #072a2d;
+  text-decoration: none;
+}
+
+.intro__btn:hover,
+.intro__btn:focus {
+  opacity: 0.75;
+  transform: translateY(-3px);
+}
+
+/*Comments:
+*we set width to each one of them that we decide and make sure that the % of them isn't above 100%.
+remember from the day 8 case 1 that if we put eveything with 100% it will equally take the space and then we don't actually need the space-between because there is no space.
+also remember that the % is from their container and not the whole page!
+*in the row we can add justify-content: space between so they take advantage of all the space of the container. if not, they will try to fit in the container with the % they got and we will have an empty space.
+*now we can play with the % to decide how much space every item will get.
+*to ensure that all the imgs are responsive, put max-width: 100%, we went back to put the img inside a div, last option was also good, he just showed how to make it work in every option.
+*/

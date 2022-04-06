@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.parent {
+  background-color: #23424a;
+  padding: 50px;
+  /* width: 900px;  prevents our repsonsive layout, why? below*/
+  width: 80%; /*solution, if I want to give it a responsive width that is not the default, use %*/
+  margin: 0 auto; /*margin auto on each side(left/right) takes the available space of the block element that contains it and push it to the far right/left in that space, eventually if we do auto on both sides like here, the available space is equally distributed and the element is centered!*/
+}
+
+.child {
+  background-color: #38cfd9;
+  /* height: 250px; normaly we don't include a height it's just to get us started, also makes an y axes overflow*/
+  /* width: 750px; */ /*also gives us overflow problem! */
+
+  /*responsive possible solution, not always need this*/
+  width: 50%;
+  height: 250px; /*just for seeing something, not part of the solution!!!*/
+}
+
+/*we are responsive by default
+* block level element such as a divs and p is that they have a width of 100% of the parent
+* about the overflow: by default, css doesn't want us to lose the text inside the div so we get an overflow so we can still read the text
+* conclusion: avoid using fixed width (px width)
+* also true about setting fixed heights and we'll learn about it in later 
+* about setting a width in % , we don't always know how the child is going to look with this mehod since it's not accurate and most of the time we don't even need to set a width at all
+* 
+*/
