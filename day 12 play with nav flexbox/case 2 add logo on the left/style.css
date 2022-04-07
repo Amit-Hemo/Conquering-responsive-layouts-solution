@@ -1,12 +1,5 @@
-/* flexbox challenge 03
 /* 
-////// For this challenge ///////
-
-- All text is in the text.md file
-
-// Requirements
-   1. Get all the navigation items next to one another
-   2. Add a space between all the items
+trying to add logo on the left of the navbar 
 */
 
 /*generals*/
@@ -55,13 +48,9 @@ header {
 }
 
 .logo{
-  margin-right: 1em;
+  margin: 0 1em 0 0;
   
-  border: 3px solid red;
-}
-
-.logo img {
-  margin-top: .2rem;
+  border: 3px solid red; /*just to see*/
 }
 
 nav {
@@ -69,7 +58,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   flex-grow: 1;
-  border: 3px solid blue ;
+  border: 3px solid blue; /*just to see*/
 }
 
 .nav__list {
