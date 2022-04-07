@@ -1,0 +1,186 @@
+/* flexbox challenge 03
+/* 
+////// For this challenge ///////
+
+- All text is in the text.md file
+
+// Requirements
+   1. Get all the navigation items next to one another
+   2. Add a space between all the items
+*/
+
+/*generals*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.intro {
+  background-color: #23424a;
+  padding: 80px 0;
+}
+
+.container {
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col {
+  width: 100%;
+}
+
+/*header*/
+
+header {
+  background-color: #136c72;
+  padding: 1em 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 1em;
+  font-size: 0.9rem;
+}
+
+.nav__link {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav__link--button {
+  background-color: white;
+  color: #136c72;
+  padding: 0.25em 1em;
+  border-radius: 10em;
+}
+
+.nav__link--button:hover {
+  opacity: 0.75;
+}
+
+/*option 1*/
+/* .nav__item--push-right{
+  margin-left: auto;
+} */
+
+/*intro*/
+
+.intro__content,
+.main__section {
+  width: 62%;
+}
+
+.intro__content__image,
+.main__aside {
+  align-self: flex-start;
+  width: 32%;
+}
+
+#intro__content__title {
+  color: white;
+  font-weight: 900;
+  font-size: 3rem;
+  margin-top: 0;
+}
+
+#intro__content__p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.3125rem;
+  font-weight: 400;
+  margin-bottom: 3em;
+}
+
+.intro__content--btn {
+  background-color: #38cfd9;
+  padding: 0.75em 2em;
+  border-radius: 100px;
+  max-width: 285px;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 200ms ease-in-out, transform 100ms ease-in-out;
+  font-size: 1.3125rem;
+}
+
+.intro__content--btn a {
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #072a2d;
+  text-decoration: none;
+}
+
+.intro__content--btn:hover,
+.intro__content--btn:focus {
+  opacity: 0.75;
+  transform: translateY(-3px);
+}
+
+/*main*/
+main {
+  margin-top: 3em;
+}
+
+.main__section p,
+.main__aside__square p {
+  font-size: 1.3125rem;
+  font-weight: 400;
+}
+
+.main__section h2,
+.main__aside h2 {
+  font-size: 2.25rem;
+  font-weight: 900;
+}
+
+.main__section h2 {
+  color: #87629a;
+}
+
+.main__aside {
+  background-color: #136c72;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+.main__aside p {
+  margin-bottom: 1em;
+}
+
+/*Comments:
+*2 ways to push the sign up and sign in to the right side of the nav:
+
+1. less common to see and without another flexbox: 
+in the html- add class to sign in (the most left one that we want to push to the right).
+in the css- on that class -> margin-left: auto.
+
+2. most common to see and with flexbox: 
+in the html - seperate the sign in and sign up to a different nav/nav__list but keep the class names the same (it will keep the flexbox from before inside each list). by now we should see the first list and the second list one below the other.
+in the css- in the class that wraps both of the lists (nav here) -> display: flex , justify-content: space-between. 
+*/
