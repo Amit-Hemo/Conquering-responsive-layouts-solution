@@ -1,0 +1,52 @@
+/*intro to media queries*/ 
+
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3rem;
+}
+
+.example{
+    width: 90%;
+    margin: 5em auto;
+    padding: 10em 0;
+    background-color: steelblue;
+}
+
+
+/*a media query: "for screens with a width of 600px and higher, change the div example background-color to olivedrab"*/
+@media(min-width: 600px){ /* inside the () is called "media feature" we can type "and" to put another feature*/
+    .example{
+        background-color: olivedrab;
+    }
+}
+
+@media(min-width: 800px){
+    .example{
+        background-color: orangered;
+    }
+}
+
+/*the opposite media query for the first one: "for screens with a width of 600px and lower, change the div example background-color to olivedrab"*/
+/* @media(max-width: 600px){
+    .example{
+        background-color: olivedrab;
+    }
+} */
+
+/*Comments
+* the media query with min-width is used for "mobile-first" styling because we change the behavior for bigger screen sizes based on the styles we got for the mobile screen sizes.
+
+* the media query with max-width is used for "desktop-first" styling for the opposite reasons...
+
+* we need to stick to one of the stylings.
+
+*note: we can add more media queries with the same styling to override properties based on "limit points" of screen sizes
+
+*note: the order of the css code is important, the last line of comment written is taken. for that reason, we will put the media queries *after* the "based" one. 
+also, if we add more media queries, like min-widths, it should be ordered from low to high, like in the css above (600px and then 800px)
+*/

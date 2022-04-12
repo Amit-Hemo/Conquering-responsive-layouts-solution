@@ -1,0 +1,202 @@
+/* add media query to small screens*/
+
+/*generals*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.intro {
+  background-color: #23424a;
+  padding: 80px 0;
+}
+
+.container {
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  border: 3px solid white; /*just to see*/
+}
+
+.col {
+  width: 100%;
+}
+
+/*header*/
+
+header {
+  background-color: #136c72;
+  padding: 1em 0;
+}
+
+.logo{
+  margin-right: 1em;
+  
+  border: 3px solid red;
+}
+
+.logo img {
+  margin-top: .2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  border: 3px solid blue ;
+}
+
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 1em;
+  font-size: 0.9rem;
+  border: 3px solid yellow; /*just to see*/ 
+}
+
+.nav__list--primary{
+  margin: 0 auto;
+}
+
+.nav__link {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav__link--button {
+  background-color: white;
+  color: #136c72;
+  padding: 0.25em 1em;
+  border-radius: 10em;
+}
+
+.nav__link--button:hover {
+  opacity: 0.75;
+}
+
+/*intro*/
+
+.intro__content,
+.main__section {
+  width: 62%;
+}
+
+.intro__image,
+.main__aside {
+  align-self: flex-start;
+  width: 32%;
+}
+
+#intro__content__title {
+  color: white;
+  font-weight: 900;
+  font-size: 3rem;
+  margin-top: 0;
+}
+
+#intro__content__p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.3125rem;
+  font-weight: 400;
+  margin-bottom: 3em;
+}
+
+.intro__content--btn {
+  background-color: #38cfd9;
+  padding: 0.75em 2em;
+  border-radius: 100px;
+  max-width: 285px;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 200ms ease-in-out, transform 100ms ease-in-out;
+  font-size: 1.3125rem;
+}
+
+.intro__content--btn a {
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #072a2d;
+  text-decoration: none;
+}
+
+.intro__content--btn:hover,
+.intro__content--btn:focus {
+  opacity: 0.75;
+  transform: translateY(-3px);
+}
+
+/*main*/
+main {
+  margin-top: 3em;
+}
+
+.main__section p {
+  font-size: 1.3125rem;
+  font-weight: 400;
+}
+
+.main__section h2,
+.main__aside h2 {
+  font-size: 2.25rem;
+  font-weight: 900;
+}
+
+.main__section h2 {
+  color: #87629a;
+}
+
+.main__aside {
+  background-color: #136c72;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+.main__aside p {
+  margin-bottom: 1em;
+}
+
+@media(max-width: 600px){
+  .row{
+    display: block; /*we want to get rid of the columns in the page*/
+  }
+
+  .intro__content,
+  .intro__image,
+  .main__section,
+  .main__aside {
+    width: 100%; /*we took different % from the cols for flexbox purposes*/
+  }
+
+  .intro__image{
+    margin-top: 2em;
+  }
+}
+
+/*Comments:
+* the problem: in small screens the col are becoming very squished and this get on top of each other.
+* we can fix that with media query :)
+* because we started with the desktop first styling (we need to optimize now for mobile) we will use it for max-width:600 (why 600? in the future)
+*we will take care of the nav later 
+*/
