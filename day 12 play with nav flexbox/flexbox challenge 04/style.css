@@ -40,15 +40,14 @@ img {
   background-color: #f3eed9;
 }
 
-.intro .flexed {
+.intro .container {
   min-height: 660px;
+  justify-content: center;
+  align-items: center;
 }
 
 .intro__content {
   text-align: center;
-  flex-grow: 1;
-  justify-self: center;
-  align-self: center;
 }
 
 .intro__content p {
@@ -113,5 +112,5 @@ section {
 
 /*
 *things I discovered while doing my solution: 
-*if I was not told that there is a min-height, I couldn't space it. Furthermore, I had to give the height to the flexed container itself and not the bigger one.
+* if I was not told that there is a min-height, I couldn't space it. Furthermore, I had to give the height to the flexed container itself and not the bigger one.
 */
