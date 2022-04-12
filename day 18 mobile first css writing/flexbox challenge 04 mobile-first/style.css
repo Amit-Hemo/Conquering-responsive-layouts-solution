@@ -1,0 +1,137 @@
+/*
+Flexbox challenge 04, given design specs, create responsive flexbox page from scratch, it said there to space the first section and that the min-height is 660px
+MOBILE-FIRST version.
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  width: min(80%, 1128px);
+  margin: 0 auto;
+}
+
+.intro {
+  background-color: #f3eed9;
+  padding: 5em 0;
+}
+
+.intro .container {
+  min-height: 660px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro__content {
+  text-align: center;
+}
+
+.intro__content p {
+  font-family: roboto, sans-serif;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+.intro__content h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 1em;
+  color: #824936;
+}
+
+section {
+  padding: 6em 0;
+}
+
+.section__title {
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-size: 2.25rem;
+}
+
+.section__details {
+  font-family: roboto, sans-serif;
+  font-weight: 400;
+  font-size: 1.3125rem;
+}
+
+.top .section__title {
+  text-align: center;
+  color: #824936;
+}
+
+.middle .section__title,
+.bottom .section__title {
+  color: #f3eed9;
+  margin-top: 0;
+}
+
+.middle .section__details,
+.bottom .section__details {
+  color: white;
+}
+
+.middle {
+  background-color: #222c2a;
+}
+
+.middle img,
+.bottom img {
+  align-self: flex-start;
+}
+
+.bottom {
+  background-color: #824936;
+}
+
+@media (min-width: 850px){
+  .flexed {
+    display: flex;
+  }
+  
+  .spaced {
+    justify-content: flex-end;
+    gap: 60px;
+  }
+  
+  .col {
+    width: 100%;
+  }
+
+  .intro__content h1 {
+    font-size: 3.75rem;
+  }
+}
+
+/* Comments:
+* mobile-first approach: 
+It's recommended by Kevin because you don't need to think about layouts, almost everything is one under another. We just need to add media queries later to make it fit to desktop sizes with all the layouts properties that are grouped inside the media query, while the basic properties are grouped above. 
+
+* choosing breakpoint/s to this project: 
+  we see that at width of 600px and higher, we start to get long lines (although the max-width we have, still long) and that's why we it is common to spread the paragraphs to different columns), also 600px is a common breakpoint for mobile devices so we can use this breakout....(?) 
+
+* after setting this breakout with a media query and adding flex, we check it and we see that the columns are too narrow and are ok from above 850px. so if we switch the breakpoint to 850px we see that below it the line still aren't too long, and the above it, the columns aren't too short. conclusion: we can keep only the 850px breakpoint give up on the 600px.
+
+* change from day 12:
+html - removing the flexed class from intro container
+css - replacing .intro .flexed to .intro .container and adding there display: flex. 
+
+I did it because I wanted the intro to be displayed flex in every screen size so everything will be centered. 
+At day 12 everything with the class flexed was with display flex because we didn't care about media queries at this stage. Now with the media query I (and Kevin in his solution) decided that every flexed class will be with display flex only at bigger screen sizes, so it was not the right thing for our intro.
+
+*/
