@@ -11,7 +11,7 @@
 * 1200px to 1800px - desktop 
 * above 1800px - big desktop 
 
-*note - we can try to consider these sizes but we aim for the minimum we can breakpoints we can use to make it work, some can go under one breakpoint.*
+*note - we can try to consider these sizes but we aim for the minimum breakpoints we can use to make it work, some can go under one breakpoint.*
 
 **for more on setting breakpoints:**
 https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/
